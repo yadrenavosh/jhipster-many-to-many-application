@@ -1,0 +1,27 @@
+entity InternalCode {
+	code String required,
+	description String required
+}
+
+entity ExternalCode {
+
+	code String required,
+	description String required,
+
+}
+
+
+relationship ManyToMany {
+  InternalCode{external} to ExternalCode{internal}
+}
+
+
+// service all with serviceImpl
+
+//Filter entities
+
+filter *
+
+
+// Set pagination options
+paginate * with pagination
