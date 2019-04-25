@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity InternalCode.
+    -->
+    <changeSet id="20190425160426-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="internal_code_id"
+                                 baseTableName="internal_code_external"
+                                 constraintName="fk_internal_code_external_internal_code_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="internal_code"/>
+        <addForeignKeyConstraint baseColumnNames="external_id"
+                                 baseTableName="internal_code_external"
+                                 constraintName="fk_internal_code_external_external_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="external_code"/>
+        
+    </changeSet>
+</databaseChangeLog>
